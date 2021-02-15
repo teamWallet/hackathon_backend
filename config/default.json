@@ -1,0 +1,94 @@
+{
+  "config": "default",
+  "app": {
+    "banner": "Service",
+    "logger": {
+      "level": "debug",
+      "path": "./../log/"
+    }
+  },
+  "grpc": {
+    "module_chain": "127.0.0.1:50052"
+  },
+  "sysDacId": "dacdac",
+  "endpoints": ["http://52.63.253.74:18890"],
+  "stableTokenList": {
+    "usdToken": {
+      "contract": "dacdactokens",
+      "symbol": "VOS",
+      "precision": 4
+    }
+  },
+  "contracts": {
+    "makecontract": {
+      "name": "makecontract"
+    },
+    "dactokencontract": {
+      "name": "dacdactokens"
+    },
+    "systemmsig": {
+      "name": "eosio.msig"
+    },
+    "directory": {
+      "name": "dacdirectory"
+    },
+    "acctsmanager": {
+      "name": "acctsmanager"
+    },
+    "authcontract": {
+      "name": "dacauthority"
+    },
+    "treasurycontract": {
+      "name": "dactreasurys"
+    },
+    "custodiancontract": {
+      "name": "daccustodian"
+    },
+    "dacmsigcontract": {
+      "name": "dacmultisigs"
+    },
+    "proposalcontract": {
+      "name": "dacproposals"
+    },
+    "escrowcontract": {
+      "name": "dacdacescrow"
+    },
+    "dividendcontract": {
+      "name": "dacdividends"
+    },
+    "daclogrecord": {
+      "name": "daclogrecord"
+    },
+    "dexcontract": {
+      "name": "dex4everyone"
+    },
+    "redenvelope": {
+      "name": "redenvelopee"
+    }
+  },
+  "db": {
+    "host": "pgm-bp1w1nb1571qlmklwo.pg.rds.aliyuncs.com",
+    "port": 1921,
+    "username": "utu_test",
+    "password": "TeV43izPGt",
+    "database": "postgres"
+  },
+  "tasks": {
+    "post" : {
+      "rewards" : 1
+    },
+    "like" : {
+      "rewards" : 1
+    },
+    "comment" : {
+      "rewards" : 1
+    },
+    "login" : {
+      "rewards" : 1
+    }
+  },
+  "tokenInfo": {
+    "icon": "https://s3-ap-southeast-2.amazonaws.com/utuone.qa/mtkinsa31mgg/493753/token.jpg",
+    "symbol" : "VOS"
+  }
+}

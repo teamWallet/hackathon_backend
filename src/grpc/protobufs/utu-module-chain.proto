@@ -1,0 +1,62 @@
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+syntax = "proto3";
+package utu_module_chain;
+
+message CommAllResponse { string transactionId = 1; }
+
+message BalanceResponse { string balance = 1; }
+
+message TableRowResponse {
+  //  json string
+  string rows = 1;
+  bool more = 2;
+  string nextKey = 3;
+}
+
+service ChainService {
+  // common
+  rpc GetTableRows(TabletRowRequest) returns (TableRowResponse) {}
+  rpc Transact(TransactRequest) returns (CommAllResponse) {}
+  rpc GetBalance(GetBalanceRequest) returns (BalanceResponse) {}
+}
+
+message PermissionLevel {
+  string actor = 1;
+  string permission = 2;
+}
+
+message Action {
+  string account = 1;
+  string name = 2;
+  repeated PermissionLevel authorization = 3;
+  //  json string
+  string data = 4;
+}
+
+message TransactRequest {
+  uint32 delaySec = 1;
+  repeated Action actions = 2;
+}
+
+message TabletRowRequest {
+  bool json = 1;
+  string code = 2;
+  string scope = 3;
+  string table = 4;
+  string table_key = 5;
+  string lowerBound = 6;
+  string upperBound = 7;
+  uint32 indexPosition = 8;
+  string keyType = 9;
+  uint32 limit = 10;
+  bool reverse = 11;
+  bool showPayer = 12;
+}
+
+message GetBalanceRequest {
+  string code = 1;
+  string name = 2;
+  string symbol = 3;
+}
